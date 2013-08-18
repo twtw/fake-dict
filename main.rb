@@ -22,7 +22,7 @@ class FakeDict < Sinatra::Base
 
   get '/search' do
     @word = params['word']
-    if @word.length.nil?
+    if @word.length.zero?
       @word = RandomIpsum.words(1)
     else
       @word = @word.gsub(/.,/,'')
