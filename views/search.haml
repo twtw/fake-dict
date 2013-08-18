@@ -1,0 +1,8 @@
+%h1
+  你正查詢 
+  = @word
+%p
+  意思為：
+  - @descript.split(' ').each do |term|
+    %a{:href => "http://#{term.gsub(/[,.]/,'')}.dict.tagbible.net"}
+      = term

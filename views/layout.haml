@@ -1,0 +1,31 @@
+!!!5
+%html
+  %head
+    %meta{:charset => 'UTF-8'}
+    %meta{:name => "viewport", :content=>"width=device-width, initial-scale=1.0"}
+    %title 偽線上字典
+    %link{:rel=>"stylesheet", :href=>"/css/bootstrap.min.css"}
+  %body
+    .container
+    .navbar.navbar-inverse
+      %a.navbar-brand{:href=>"http://www.dict.tagbible.net"} 偽線上字典
+      %ul.nav.navbar-nav
+        -3.times do |i|
+          %li
+            %a.lorem_w{:href => "#"}
+        %li
+      %btn.btn.btn-danger.navbar-btn.pull-right.lorem_w2
+      %form.navbar-form.navbar-left.pull-right{:role => "search", :action => "http://www.dict.tagbible.net/search"}
+        .form-group
+          %input.form-control{:placeholder => "search", :type => "text", :name => "word"}
+        %button.btn.btn-warning{:type => "submit"} 查詢
+    .col-md-1
+    .col-md-8
+      =yield
+    %script{:src=>"/js/jquery.min.js", :type=>"text/javascript"}
+    %script{:src=>"/js/bootstrap.min.js", :type=>"text/javascript"}
+    %script{:src=>"/js/lorem.js", :type=>"text/javascript"}
+    :javascript
+      (function($) {
+        $("body").ipsum();
+      }(jQuery));
